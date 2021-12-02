@@ -82,16 +82,18 @@ class HomeController
 	public function page_security($id)
 	{
 		$profile = $this->db->selectOne($id);
-		echo $this->templates->render('security', ['id' => $id,
-													'profile' => $profile]); 
+		echo $this->templates->render('security', 
+					      ['id' => $id,
+						'profile' => $profile]); 
 		exit;
 	}
 
 	public function status($id)
 	{
 		$user = $this->db->selectOne($id);
-		echo $this->templates->render('status', ['id' => $id,
-												'status' => $user['online_status']]);
+		echo $this->templates->render('status',
+					      ['id' => $id,
+						'status' => $user['online_status']]);
 		exit;
 	}
 }
